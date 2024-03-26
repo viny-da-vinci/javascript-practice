@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <title>My Future Plans App</title>
+    <link rel="stylesheet" href="My_plans.css">
+</head>
+<body>
+    <h3>This is where I create a list of<span class="opening_words"> 
+        all the things i want to achieve in the near future.
+        </span>
+    </h3>
+    <h2 class="opening_words" >INSHALLAH :)</h2>
+    <div id="EARNINGS">
+        <h4>EARNINGS</h4>
+        <input  id="Earnings_entry" type="text"/>
+        <button onclick="addEarning()">Input Earning</button>
+        <div id="Earnings_list"></div>
+    </div>
+    <div id="DRIVING">
+        <h4> DRIVING</h4>
+        <input id="driving_entry" type="text"/>
+        <button onclick="addDriving()">Input Cars</button>
+        <div id="Driving_list"></div>
+    </div>
+    <div id="STUDYING">
+        <h4>STUDYING</h4>
+        <input id="Studying_entry" type="text"/>
+        <button onclick="addStudying()">Input Courses</button>
+        <div id="Studying_list"></div>
+    </div>
+    <script>
+        //this is my current javascript file
+        let earnings_list = ['coding']
+         render_1();
+
+        function addEarning(){ 
+          let textbox = document.getElementById('Earnings_entry')
+          let earnings =textbox.value
+          earnings_list.push(earnings)
+          render_1();
+        } 
+        function render_1(){
+         //this function prints the earnings on the screen
+         /*to reset list befote re rendering it*/
+         document.getElementById('Earnings_list').innerHTML=''
+            
+        earnings_list.forEach(function (EArning){
+        let element =document.createElement('div');
+        element.innerText=EArning;
+        Earnings_list.appendChild(element)
+       })
+        }
+      let driving_list = ['Audi']
+        render_2();
+       function addDriving(){
+         let textbox = document.getElementById('driving_entry')
+         let drivings = textbox.value
+         driving_list.push(drivings)
+         render_2();
+        }
+        function render_2 (){
+            document.getElementById('Driving_list').innerHTML=''
+            driving_list.forEach(function (DRiving){
+                let element1 =document.createElement('div');
+                element1.innerText=DRiving
+                Driving_list.appendChild(element1)
+            })
+        }
+     let studying_list= ['Python programming']
+     render_3();
+     function addStudying(){
+        let textbox =document.getElementById('Studying_entry')
+        let studyings = textbox.value
+        studying_list.push(studyings)
+        render_3();
+     }
+     function render_3(){
+        document.getElementById('Studying_list').innerHTML=''
+        studying_list.forEach(function (STudying){
+        let element2=document.createElement('div');
+        element2.innerText=STudying 
+        Studying_list.appendChild(element2)
+        })
+     }
+       
+    </script>
+</body>
+</html>
+    
